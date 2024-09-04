@@ -14,6 +14,9 @@ def main():
         ai_key = os.getenv('AI_SERVICE_KEY')
 
         # Create client using endpoint and key
+        
+        credential = AzureKeyCredential(ai_key)
+        ai_client = TextAnalyticsClient(endpoint=ai_endpoint, credential=credential)
 
 
         # Analyze each text file in the reviews folder
